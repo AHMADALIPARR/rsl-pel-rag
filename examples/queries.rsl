@@ -1,0 +1,27 @@
+# Example native queries for RSL
+
+## Basic retrieval
+LET evidence = RAG LATTICE documents
+  SEGMENT BY INFORMATION_BOUNDARY
+  SIGNATURE SPARSE_HASH64
+  TRAVERSE RECURSIVE
+  WHERE provenance.verified = TRUE
+  MATCH :question
+  TOP 16;
+LET related = SQL {
+  SELECT *
+  FROM evidence
+  JOIN source_registry
+    ON evidence.source_id = source_registry.id
+};
+RETURN AGENT researcher
+  REASON OVER related;
+
+## With structural filter
+LET evidence = RAG LATTICE papers
+  SEGMENT BY INFORMATION_BOUNDARY
+  SIGNATURE SPARSE_HASH64
+  TRAVERSE RECURSIVE
+  WHERE source_registry.verified = TRUE AND depth <= 3
+  MATCH :formal_spec
+  TOP 8;

@@ -1,0 +1,7 @@
+target/
+*.lock
+_build/
+deps/
+.elixir_ls/
+*.beam
+.DS_Store
