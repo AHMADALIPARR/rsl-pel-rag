@@ -1,0 +1,21 @@
+[package]
+name = "rsl_core"
+version = "0.1.0"
+edition = "2021"
+license = "AGPL-3.0-only"
+description = "Recursive Semantic Lattice core: sparse signatures, segmentation, recursive partitions"
+authors = ["SnapKitty Research Lab"]
+
+[[bin]]
+name = "rsl-demo"
+path = "src/main.rs"
+
+[dependencies]
+hashbrown = "0.14"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+rayon = "1.10"
+thiserror = "1.0"
+unicode-segmentation = "1.11"
+regex = "1.10"
