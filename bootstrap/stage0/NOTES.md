@@ -56,3 +56,15 @@ Stage 0 is therefore deliberately small: a host VM that loads,
 validates, and deterministically executes PQRB programs, with the
 assembler and hand-authored guest code deferred to Stage 2 and
 documented as such rather than implied.
+
+## Milestone 002 update (Stage 2, assembler only)
+
+The original assembler now exists: `machine/assembler/bsmasm.c`
+(builds `build/bsmasm`), specified in
+`constitution/assembly-grammar.spec`. It assembles the Milestone
+001 opcode subset only, emits PQRB files, and validates its own
+output through the loader before writing it. Hand-authored
+assembly fixtures live in `fixtures/*.asm`. Hand-authored x86-64
+guest code (machine code written directly, as opposed to BSM-64
+assembly source) and self-hosting remain later work and are still
+not claimed.

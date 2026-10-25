@@ -68,8 +68,9 @@ of the file AFTER the 64-byte header: that is, of the section
 table concatenated with the section bodies, in file order. The
 digest is computed with the hand-written SHA-256 implementation in
 machine/bsm_sha256.c (FIPS 180-4), shared by the loader and by the
-fixture tool, so the tool that writes a file and the loader that
-checks it cannot drift apart.
+fixture tool, and (since Milestone 002) by the assembler, so any
+tool that writes a file and the loader that checks it cannot drift
+apart.
 
 The digest binds the section table and all section bodies. Header
 fields other than the digest (magic, versions, entry offset,

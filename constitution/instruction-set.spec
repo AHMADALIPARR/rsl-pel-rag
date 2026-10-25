@@ -164,7 +164,9 @@ conceals the instruction that trapped.
 
 8. Not yet implemented (documented, never silently accepted)
 ------------------------------------------------------------
-Language frontend, assembler, SQL, region algebra, relational and
+Language frontend, SQL, region algebra, relational and
 retrieval opcodes, agent opcodes, storage opcodes, trust opcodes,
 floating-point, host syscalls from guest code, and self-hosting.
-Any opcode from a reserved range traps at run time.
+Assembler: implemented in Milestone 002 for exactly the subset
+above (see constitution/assembly-grammar.spec); it does not add
+opcodes. Any opcode from a reserved range traps at run time.

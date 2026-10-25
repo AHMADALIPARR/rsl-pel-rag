@@ -1,0 +1,2 @@
+JMP nowhere
+RET
