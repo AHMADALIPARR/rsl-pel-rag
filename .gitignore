@@ -5,3 +5,5 @@ deps/
 .elixir_ls/
 *.beam
 .DS_Store
+# BSM-64 Milestone 001 build outputs
+build/
